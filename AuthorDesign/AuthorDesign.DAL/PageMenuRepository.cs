@@ -22,7 +22,7 @@ namespace AuthorDesign.DAL {
                              p.Name,
                              p.PId,
                              a.ActionList,
-                             IsDelete = a.IsDelete == null ? (byte)0 : a.IsDelete
+                             a.IsDelete
                          };
             return result.ToList().Select(m => new PageMenuAction() { ActionList = m.ActionList, Id = m.Id, IsDelete = m.IsDelete, Name = m.Name, PId = m.PId });
         }
