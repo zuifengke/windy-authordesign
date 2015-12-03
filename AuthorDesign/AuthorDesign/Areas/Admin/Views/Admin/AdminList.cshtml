@@ -270,6 +270,7 @@
                     if (result.state == "success") {
                         $("#Id").val(id);
                         $("#Mobile").val(result.result.Mobile);
+                        $("#AdminName").val(result.result.AdminName);
                         $("#AuthoryId option[value=" + result.result.AuthoryId + "]").attr("selected", "selected");
                         if (result.result.IsLogin == 1) {
                             $("input[name='IsLogin']").eq(0).removeAttr("checked");

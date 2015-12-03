@@ -20,6 +20,14 @@ namespace AuthorDesign.Web.Areas.Admin.Models
         [Required(ErrorMessage="手机号码不能为空")]
         public string Mobile { get; set; }
         /// <summary>
+        /// 用户名
+        /// </summary>
+        [StringLength(11, MinimumLength = 1, ErrorMessage = "用户名不能为空")]
+        [Display(Name = "用户名")]
+        [Required(ErrorMessage = "用户名不能为空")]
+        public string AdminName { get; set; }
+
+        /// <summary>
         /// 对应角色Id
         /// </summary>
         [Display(Name = "对应角色Id")]

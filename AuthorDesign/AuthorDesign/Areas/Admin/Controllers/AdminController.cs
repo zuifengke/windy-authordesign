@@ -73,6 +73,7 @@ namespace AuthorDesign.Web.Areas.Admin.Controllers
                         CreateTime = DateTime.Now,
                         IsLogin = model.IsLogin,
                         Mobile = model.Mobile,
+                        AdminName=model.AdminName,
                         IsSuperAdmin = 0,
                         LastLoginTime = DateTime.Now,
                         Salt = salt,
@@ -127,12 +128,13 @@ namespace AuthorDesign.Web.Areas.Admin.Controllers
                     Model.Admin admin = new Model.Admin() {
                         AuthoryId = model.AuthoryId,
                         IsLogin = model.IsLogin,
+                        AdminName=model.AdminName,
                         Mobile = model.Mobile,
                         Id = model.Id
                     };
                     //清楚context中result对象
                     adminRepository.Get(m => m.Id == model.Id);
-                    adminRepository.EditEntity(admin, new string[] { "AuthoryId", "IsLogin", "Mobile" });
+                    adminRepository.EditEntity(admin, new string[] { "AuthoryId", "IsLogin", "Mobile", "AdminName" });
                     PublicFunction.AddOperation(1, string.Format("修改管理员"), string.Format("修改管理员=={0}==成功", model.Mobile));
                     if (EnterRepository.GetRepositoryEnter().SaveChange() > 0) {
                         return Json(new {
