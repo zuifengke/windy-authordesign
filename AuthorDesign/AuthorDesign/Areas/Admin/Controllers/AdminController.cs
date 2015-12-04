@@ -77,7 +77,7 @@ namespace AuthorDesign.Web.Areas.Admin.Controllers
                         IsSuperAdmin = 0,
                         LastLoginTime = DateTime.Now,
                         Salt = salt,
-                        Password = MD5Helper.CreatePasswordMd5("ad" + model.Mobile.Substring(7, 4), salt)
+                        Password = MD5Helper.CreatePasswordMd5( "111111", salt)
                     });
                     //添加下操作记录
                     PublicFunction.AddOperation(1, string.Format("添加管理员"), string.Format("添加管理员=={0}==成功", model.Mobile));
