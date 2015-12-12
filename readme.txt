@@ -1,0 +1,2 @@
+1、数据库支持mysql,sqlserver，通过db目录下的文件导入bak为sqlserver用
+2、后台登录账号 admin 123456
